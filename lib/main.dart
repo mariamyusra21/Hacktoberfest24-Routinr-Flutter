@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habit_tracker/Signup_screen.dart';
 import 'package:habit_tracker/profile_screen.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class HabitTrackerApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: HomePage(),
+      home: SignUpScreen(),
     );
   }
 }
@@ -32,8 +33,7 @@ class _HomePageState extends State<HomePage> {
     Center(
         child: Text('Calendar Page',
             style: TextStyle(fontSize: 24))), //Add widgets for Calendar Page
-    Center(
-        child: ProfileScreen()), //Add widget for profile page
+    Center(child: ProfileScreen()), //Add widget for profile page
   ];
 
   @override
@@ -41,15 +41,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[700],
-        title: Text('Routinr: Habit Tracker', style: TextStyle(
-          color: Colors.white
-        ),),
+        title: Text(
+          'Routinr: Habit Tracker',
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
-                icon: Icon(Icons.incomplete_circle_sharp, color: Colors.white,),
+                icon: Icon(
+                  Icons.incomplete_circle_sharp,
+                  color: Colors.white,
+                ),
                 onPressed: () {
                   // Add Logic for streak
                 },
